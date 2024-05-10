@@ -1,6 +1,8 @@
 import React, { useEffect, useReducer } from 'react'
-import { getAll } from '../../services/foodServices';
+import { getAll, search } from '../../services/foodServices';
 import Thumbnails from '../../components/Thumbnails/Thumbnails';
+import { useParams } from 'react-router-dom';
+import Search from '../../components/Search/Search';
 
 const initialState = {foods: [] };
 
@@ -15,12 +17,15 @@ const reducer = (state, action) => {
 
 const HomePage = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const {foods} = state;
+  const { foods } = state;
+  const { searchTerm } = useParams();
 
   useEffect(() => {
-    getAll().then(foods => dispatch({type: 'FOODS_LOADED', payload: foods}));
-  });
+    const loadFoods = searchTerm ? search(searchTerm) : getAll();
+    loadFoods.then(foods => dispatch({type: 'FOODS_LOADED', payload: foods}));
+  }, [searchTerm]);
   return <>
+    <Search />
     <Thumbnails foods={foods}/>
   </>
 }
