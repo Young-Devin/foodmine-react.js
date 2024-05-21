@@ -41,7 +41,7 @@ export const sample_foods = [
       origins: ['belgium', 'france'],
       stars: 3,
       imageUrl: 'food-4.jpg',
-      tags: ['FastFood', 'Fry'],
+      tags: ['FastFood', 'Fries'],
     },
     {
       id: '5',
@@ -74,7 +74,7 @@ export const sample_foods = [
     { name: 'Lunch', count: 3 },
     { name: 'SlowFood', count: 2 },
     { name: 'Hamburger', count: 1 },
-    { name: 'Fry', count: 1 },
+    { name: 'Fries', count: 1 },
     { name: 'Soup', count: 1 },
   ];
   
