@@ -10,7 +10,7 @@ const Thumbnails = ( {foods} ) => {
             <li key={food.id}>
                 <Link to={`/food/${food.id}`}>
                     <img className={classes.image}
-                    src={`/foods/${food.imageUrl}`}
+                    src={`${food.imageUrl}`}
                     alt={food.name}
                     />
                 
