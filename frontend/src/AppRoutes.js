@@ -8,6 +8,7 @@ import RegisterPage from './pages/Register/RegisterPage'
 import AuthRoute from './components/AuthRoute/AuthRoute'
 import CheckoutPage from './pages/Checkout/CheckoutPage'
 import PaymentPage from './pages/Payment/PaymentPage'
+import OrderTrackPage from './pages/OrderTrack/OrderTrackPage'
 
 
 const AppRoutes = () => {
@@ -29,6 +30,12 @@ const AppRoutes = () => {
         <Route path="/payment" element={
         <AuthRoute>
             <PaymentPage />
+          </AuthRoute>
+        }
+        />
+        <Route path="/track/:orderId" element={
+        <AuthRoute>
+            <OrderTrackPage />
           </AuthRoute>
         }
         />
